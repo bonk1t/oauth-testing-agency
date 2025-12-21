@@ -58,15 +58,13 @@ agency-github-template/
 ├── requirements.txt          # Python dependencies
 ├── Dockerfile               # Container configuration
 ├── .env                     # Environment variables (create this)
-├── example_agent/           # Your agency folder
+├── github_agent/            # GitHub OAuth MCP-enabled agent
     ├── __init__.py
-    ├── example_agent.py
+    ├── github_agent.py
     ├── instructions.md
     ├── files/               # Local files accessible to the agent (via files_folder)
-    └── tools/
-        └── ExampleTool.py
-├── example_agent2/
-├── agency_manifesto.md  # Shared instructions
+    └── tools/               # Local tools (optional; this agency primarily uses MCP tools)
+├── shared_instructions.md    # Shared instructions
 ├── requirements.txt
 ├── .env
 └──...
@@ -113,7 +111,7 @@ The AI assistant will automatically:
 
 ### 🚀 **Manual Alternative (Advanced Users)**
 
-If you prefer manual setup, replace the `ExampleAgency/` folder with your own agency structure following the Agency Swarm conventions.
+If you prefer manual setup, replace the `github_agent/` folder with your own agency structure following the Agency Swarm conventions.
 
 ### Agency Structure Requirements
 
@@ -124,7 +122,7 @@ Your agency must follow this structure:
   - `AgentName.py` - Agent class definition
   - `instructions.md` - Agent-specific instructions
   - `tools/` - Folder containing agent tools
-- **agency_manifesto.md** - Shared instructions for all agents
+- **shared_instructions.md** - Shared instructions for all agents
 
 ---
 
@@ -237,4 +235,4 @@ The `.cursor/rules/workflow.mdc` file contains the complete development specific
 
 Open this template in **Cursor IDE** and ask the AI to create your agency using the `.cursor` workflow. The AI will handle everything from setup to testing automatically!
 
-For manual development, replace the `ExampleAgency` with your own implementation and start deploying intelligent agent systems!
+For manual development, replace the `github_agent` agent implementation with your own and start deploying intelligent agent systems!
