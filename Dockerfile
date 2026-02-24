@@ -16,4 +16,10 @@ RUN pip install --upgrade pip && \
 
 COPY . .
 
+RUN mkdir -p /app/activity-logs \
+    /app/data/oauth-tokens \
+    /app/github_agent/files \
+    /app/github_agent/tools && \
+    chmod -R a+rwx /app/activity-logs /app/data/oauth-tokens /app/github_agent/files /app/github_agent/tools
+
 CMD ["python", "-u", "main.py"]
