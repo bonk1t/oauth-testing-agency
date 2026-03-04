@@ -3,9 +3,11 @@ import os
 from agency_swarm import Agent
 from agency_swarm.mcp import MCPServerOAuth
 
+GITHUB_MCP_URL = os.getenv("GITHUB_MCP_URL", "http://localhost:8001/mcp")
+GITHUB_MCP_URL_SOURCE = "env" if os.getenv("GITHUB_MCP_URL") else "default"
 
 github = MCPServerOAuth(
-    url=os.getenv("GITHUB_MCP_URL", "http://localhost:8001/mcp"),
+    url=GITHUB_MCP_URL,
     name="github",
     scopes=["repo", "user"],
 )
@@ -19,5 +21,4 @@ github_agent = Agent(
     mcp_servers=[github],
     model="gpt-5.2",
 )
-
 
