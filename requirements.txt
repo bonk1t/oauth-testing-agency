@@ -1,4 +1,3 @@
-agency-swarm[fastapi]>=1.2.1
-git+https://github.com/VRSEN/agency-swarm.git@feat/mcp-oauth-support
+git+https://github.com/VRSEN/agency-swarm.git@d4b709c7269e44c0ce6f4bc122f3f198e9c1ca59
 fastapi
 uvicorn
